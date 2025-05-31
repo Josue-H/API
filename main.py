@@ -17,7 +17,7 @@ app = FastAPI(
 # 🚨 Agregá esto ANTES de incluir routers
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:8081"],  # podés usar ["*"] solo para pruebas
+    allow_origins=["*"],  # Permitir todos los orígenes TEMPORALMENTE
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
