@@ -20,7 +20,8 @@ async def llamar_a_modelo_simulado(image_url: str) -> dict:
                     {
                         "type": "text",
                         "text": (
-                            "Observa esta imagen de un cultivo y responde usando el siguiente formato, sin estilos de letras, solo en el formato, , si no es un cultivo natural solo pon en el nombre "No es un cultivo", en el nombre no pongas otros comentarios, solo el nombre más certero:\n\n"
+                            "Observa esta imagen de un cultivo y responde usando el siguiente formato, sin estilos de letras, solo en el formato, "
+                            "si no es un cultivo natural solo pon en el nombre 'No es un cultivo', en el nombre no pongas otros comentarios, solo el nombre más certero:\n\n"
                             "nombre\n"
                             "tipo_de_cultivo:\n"
                             "edad_aproximada:\n"
@@ -30,6 +31,11 @@ async def llamar_a_modelo_simulado(image_url: str) -> dict:
                             "clima_ideal:\n"
                             "temporada_recomendada:\n"
                             "tipo_de_suelo:\n"
+                            "riego_recomendado:\n"
+                            "fertilización:\n"
+                            "indicadores_de_salud:\n"
+                            "métodos_de_control:\n"
+                            "cosecha_y_almacenamiento:\n"
                         )
                     },
                     {
@@ -39,13 +45,14 @@ async def llamar_a_modelo_simulado(image_url: str) -> dict:
                 ]
             }
         ],
-        max_tokens=1000
+        max_tokens=1500
     )
 
     content = response.choices[0].message.content
     print("\n📤 Respuesta cruda del modelo:\n", content)
 
     return texto_a_json(content)
+
 
 
 def texto_a_json(respuesta: str) -> dict:
