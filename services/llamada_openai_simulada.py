@@ -20,7 +20,7 @@ async def llamar_a_modelo_simulado(image_url: str) -> dict:
                     {
                         "type": "text",
                         "text": (
-                            "Observa esta imagen de un cultivo y responde usando el siguiente formato, sin estilos de letras, solo en el formato:\n\n"
+                            "Observa esta imagen de un cultivo y responde usando el siguiente formato, sin estilos de letras, solo en el formato, , si no es un cultivo natural solo pon en el nombre "No es un cultivo":\n\n"
                             "nombre\n"
                             "tipo_de_cultivo:\n"
                             "edad_aproximada:\n"
