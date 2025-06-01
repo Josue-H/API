@@ -12,7 +12,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 async def llamar_a_modelo_simulado(image_url: str) -> dict:
     response = client.chat.completions.create(
-        model="gpt-4.1",
+        model="gpt-4o",
         messages=[
             {
                 "role": "user",
